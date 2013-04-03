@@ -1,0 +1,18 @@
+# Eclipse stuff
+.classpath
+.project
+.settings
+.checkstyle
+*/.classpath
+*/.project
+*/.settings
+*/.checkstyle
+
+#ant
+/build.xml
+
+#maven
+/target
+*/target
+# vim
+.*.sw[a-p]

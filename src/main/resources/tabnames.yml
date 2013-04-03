@@ -1,0 +1,6 @@
+# For players, their name must be included (use nickname if desired). 
+# For groups, only the display colour is required (it will be appended onto the start of the playername). 
+# Maximum 16 characters. Explicit customisation of player takes precedence over their group colour. 
+# For colours codes, see http://www.minecraftwiki.net/wiki/Classic_server_protocol#Color_Codes
+Players:
+    kjhf: $ck$6j$2h$1f$d!

@@ -1,0 +1,97 @@
+name: DECore
+version: 0.1
+main: net.deviantevil.decore.DECore
+description: Core library plugin for DeviantEvil!
+author: kjhf
+softdepend: [Vault, Votifier] 
+commands:
+  adventure:
+    description: Change gamemode to adventure
+    usage: /adventure [player]
+    aliases: [a]
+  checkinventory:
+    description: Check a player's inventory
+    aliases: [inv, checkinv]
+  clearinventory:
+    description: Clear a player's inventory
+    aliases: [clear, clearinv]
+  creative:
+    description: Change gamemode to creative
+    usage: /creative [player]
+    aliases: [c]
+  dep:
+    description: Get DEPoints
+    usage: /dep [player]
+  deviantbucket:
+    description: Infinite Buckets
+    aliases: [infinitebucket, buckets, bucket]
+  deviantevilcore:
+    description: Main DE functions
+    aliases: [de, decore, deviantevil]
+  deviantgetpos:
+    description: Gets your position
+    aliases: [getpos, pos]
+  deviantgettime:
+    description: Gets the server time.
+    aliases: [gettime, detime, ping]
+  deviantgetranks:
+    description: Get a list of DE ranks registered on the server.
+    aliases: [listrank, listranks, listgroups, listgroup, ranks, groups]
+  deviantgetrank:
+    description: Gets your rank.
+    aliases: [rank, group]
+  motd:
+    description: View the motd as defined in the DECore config.
+    aliases: [news]
+  offduty:
+    description: Go off duty mod
+  onduty:
+    description: Go on duty mod
+  resendchunk:
+    description: Resends chunks.
+    aliases: [sendchunk, chunk]
+  spawn:
+    description: Tp player to spawn
+    aliases: [despawn]
+  survival:
+    description: Change gamemode to survival
+    usage: /survival [player]  
+    aliases: [s]    
+  tp:
+    description: Tp player to another player
+    aliases: [teleport]
+    usage: /tp [player] <destinationplayer>
+  tpall:
+    description: Tp all players to sender
+    aliases: [teleportall]
+    usage: /tpall [world]
+  tploc:
+    description: Tp player to location
+    aliases: [tppos, tpto, goto]
+    usage: /tploc x y z
+  vanish:
+    description: Invisible player.
+    aliases: [invisible]
+  deviantvouch:
+    description: Deviant Evil's Vouch system
+    aliases: [vouch]
+    usage: /vouch [player]
+permissions:
+    decore.*:
+        description: Gives access to all deviantcore commands
+        children:
+            decore.core: true
+            de.buckets: true
+            de.spawn: true
+    de.buckets:
+        description: Allows player to use /bucket
+        default: true
+    decore.core:
+        description: Allows you to access deviantcore commands
+        default: op
+    de.groups:
+        description: Group permissions
+        default: false
+    de.spawn:
+        description: Allows player to use /spawn
+        default: true
