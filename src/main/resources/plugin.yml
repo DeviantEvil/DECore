@@ -1,0 +1,7 @@
+name: DEForoSync
+main: net.deviantevil.core.CorePlugin
+version: 1
+database: true
+commands:
+    kick:
+    ban:
