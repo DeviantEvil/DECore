@@ -13,16 +13,14 @@ import net.deviantevil.moderation.ModerationModule;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CorePlugin extends JavaPlugin {
-    
+
     private static Map<String, Logger> mLoggers = new HashMap<String, Logger>();
-    
-    private CoreModule[] mModules = {
-            new ModerationModule(this)
-    };
-    
+
+    private CoreModule[] mModules = { new ModerationModule(this) };
+
     @Override
     public void onEnable() {
-        for(CoreModule c : mModules) {
+        for (CoreModule c : mModules) {
             c.enable();
         }
         setupDatabase();
@@ -35,26 +33,26 @@ public class CorePlugin extends JavaPlugin {
             installDDL();
         }
     }
-    
+
     @Override
     public void onDisable() {
-        for(CoreModule c : mModules) {
+        for (CoreModule c : mModules) {
             c.disable();
         }
     }
-    
+
     @Override
     public List<Class<?>> getDatabaseClasses() {
         List<Class<?>> list = new ArrayList<Class<?>>();
-        for(CoreModule m : mModules) {
-            list.add(m.getDatabaseClass());
+        for (CoreModule m : mModules) {
+            list.addAll(m.getDatabaseClasses());
         }
         return list;
     }
-    
+
     Logger getLogger(String name) {
         Logger logger = mLoggers.get(name);
-        if(logger == null) {
+        if (logger == null) {
             logger = Logger.getLogger(name, null);
             logger.addHandler(new SQLHandler(this));
         }

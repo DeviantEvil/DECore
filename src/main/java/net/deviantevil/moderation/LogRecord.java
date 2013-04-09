@@ -6,40 +6,31 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.avaje.ebean.validation.Future;
 import com.avaje.ebean.validation.NotEmpty;
 
-//CREATE TABLE moderation_log (
-//id INT NOT NULL AUTO_INCREMENT,
-//stamp TIMESTAMP DEFAULT NOW(),
-//end TIMESTAMP DEFAULT NULL,
-//action VARCHAR(20) NOT EMPTY,
-//issuer VARCHAR(20) NOT EMPTY,
-//target VARCHAR(20) NOT EMPTY,
-//reason TEXT,
-//PRIMARY KEY(id)
-//);
-
 @Entity
-@Table(name="decore_moderation")
-public class ModerationRecord {
+@Table(name = "decore_moderation")
+public class LogRecord {
     @Id
     private int id;
-    
+
     private Date timestamp;
-    
+
+    @Future
     private Date end;
-    
+
     @NotEmpty
     private String action;
-    
+
     @NotEmpty
     private String issuer;
-    
+
     @NotEmpty
     private String target;
-    
+
     private String reason;
-    
+
     public int getId() {
         return id;
     }

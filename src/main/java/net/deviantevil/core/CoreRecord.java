@@ -19,20 +19,20 @@ import com.avaje.ebean.validation.NotNull;
 //);
 
 @Entity
-@Table(name="decore_log")
+@Table(name = "decore_log")
 public class CoreRecord {
     @Id
     private int id;
-    
+
     @NotNull
     private Date timestamp;
-    
+
     @NotEmpty
     private String level;
-    
+
     @NotEmpty
     private String name;
-    
+
     @NotEmpty
     private String message;
 
@@ -75,7 +75,5 @@ public class CoreRecord {
     public void setMessage(String message) {
         this.message = message;
     }
-    
+
 }
-
-
